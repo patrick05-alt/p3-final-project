@@ -50,4 +50,39 @@ public class AppData {
         searchableItems.addAll(getAllLocations());
         return searchableItems;
     }
+
+    // Helper methods for admin operations
+    public List<Event> getEvents() {
+        return getAllEvents();
+    }
+
+    public List<Location> getLocations() {
+        return getAllLocations();
+    }
+
+    public void addEvent(Event event) {
+        if (allEvents == null) {
+            allEvents = new ArrayList<>();
+        }
+        allEvents.add(event);
+    }
+
+    public void removeEvent(Long id) {
+        if (allEvents != null && id != null && id < allEvents.size()) {
+            allEvents.remove(id.intValue());
+        }
+    }
+
+    public void addLocation(Location location) {
+        if (allLocations == null) {
+            allLocations = new ArrayList<>();
+        }
+        allLocations.add(location);
+    }
+
+    public void removeLocation(Long id) {
+        if (allLocations != null && id != null && id < allLocations.size()) {
+            allLocations.remove(id.intValue());
+        }
+    }
 }

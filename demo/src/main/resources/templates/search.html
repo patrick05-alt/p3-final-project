@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - UVT Newcomer Assistant</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        nav { background: white; padding: 20px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        nav h1 { color: #667eea; margin-bottom: 15px; }
+        nav a { color: #667eea; text-decoration: none; margin-right: 20px; padding: 8px 15px; border-radius: 5px; transition: all 0.3s; }
+        nav a:hover { background: #667eea; color: white; }
+        .card { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        h2 { color: #667eea; margin-bottom: 30px; }
+        .search-box { display: flex; gap: 15px; margin-bottom: 30px; }
+        .search-box input { flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1.1em; }
+        .search-box button { padding: 15px 40px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; transition: all 0.3s; }
+        .search-box button:hover { background: #764ba2; }
+        .result-item { background: #f8f9fa; padding: 20px; border-radius: 5px; margin-bottom: 15px; border-left: 4px solid #667eea; }
+        .result-item h4 { color: #333; margin-bottom: 10px; }
+        .result-item p { color: #666; }
+        .no-results { text-align: center; padding: 60px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1>🎓 UVT Newcomer Assistant</h1>
+            <a th:href="@{/view/}">Home</a>
+            <a th:href="@{/view/users}">Users</a>
+            <a th:href="@{/view/contacts}">Contacts</a>
+            <a th:href="@{/view/events}">Events</a>
+            <a th:href="@{/view/locations}">Locations</a>
+            <a th:href="@{/view/search}">Search</a>
+        </nav>
+
+        <div class="card">
+            <h2>🔍 Search Everything</h2>
+            
+            <form th:action="@{/view/search}" method="get" class="search-box">
+                <input type="text" name="q" th:value="${query}" placeholder="Search contacts, events, locations..." required>
+                <button type="submit">Search</button>
+            </form>
+
+            <div th:if="${query != null}">
+                <h3 style="color: #333; margin-bottom: 20px;">
+                    Search Results for "<span th:text="${query}"></span>"
+                </h3>
+                
+                <div th:if="${results != null and not #lists.isEmpty(results)}">
+                    <div th:each="result : ${results}" class="result-item">
+                        <h4 th:text="${result.class.simpleName}">Type</h4>
+                        <p th:text="${result}">Result content</p>
+                    </div>
+                </div>
+                
+                <div th:if="${results == null or #lists.isEmpty(results)}" class="no-results">
+                    <p>😕 No results found for "<span th:text="${query}"></span>"</p>
+                    <p style="margin-top: 10px; font-size: 0.9em;">Try searching with different keywords</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

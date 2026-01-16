@@ -23,7 +23,7 @@ public class JsonDataRepository implements DataRepository {
     @Override
     public AppData loadData() throws DataLoadException {
         if (!dataResource.exists()) {
-            return new AppData(); // Return empty data if file doesn't exist
+            return new AppData();
         }
         try (InputStream inputStream = dataResource.getInputStream()) {
             return objectMapper.readValue(inputStream, AppData.class);
@@ -34,8 +34,6 @@ public class JsonDataRepository implements DataRepository {
 
     @Override
     public void saveData(AppData data) throws DataSaveException {
-        // Saving to a classpath resource is not generally feasible.
-        // This would require writing to a file on the filesystem.
         throw new UnsupportedOperationException("Saving data is not supported in this implementation.");
     }
 }

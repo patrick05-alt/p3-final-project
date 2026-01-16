@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User - UVT Newcomer Assistant</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        nav { background: white; padding: 20px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        nav h1 { color: #667eea; margin-bottom: 15px; }
+        nav a { color: #667eea; text-decoration: none; margin-right: 20px; padding: 8px 15px; border-radius: 5px; transition: all 0.3s; }
+        nav a:hover { background: #667eea; color: white; }
+        .card { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #667eea; margin-bottom: 30px; }
+        form { display: grid; gap: 20px; }
+        label { color: #333; font-weight: 500; display: block; margin-bottom: 5px; }
+        input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em; }
+        .button-group { display: flex; gap: 15px; margin-top: 10px; }
+        button { padding: 12px 30px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; transition: all 0.3s; flex: 1; }
+        button:hover { background: #764ba2; transform: translateY(-2px); }
+        .btn-cancel { background: #6c757d; }
+        .btn-cancel:hover { background: #5a6268; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1>🎓 UVT Newcomer Assistant</h1>
+            <a th:href="@{/view/}">Home</a>
+            <a th:href="@{/view/users}">Users</a>
+        </nav>
+
+        <div class="card">
+            <h2>✏️ Edit User</h2>
+            <form th:action="@{/view/users/update/{id}(id=${user.id})}" method="post" th:object="${user}">
+                <div>
+                    <label for="username">Username *</label>
+                    <input type="text" id="username" name="username" th:value="${user.username}" required>
+                </div>
+                <div>
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" th:value="${user.email}" required>
+                </div>
+                <div>
+                    <label for="password">New Password (leave empty to keep current)</label>
+                    <input type="password" id="password" name="password" placeholder="Enter new password (min 6 chars)">
+                </div>
+                <div class="button-group">
+                    <button type="submit">💾 Save Changes</button>
+                    <a th:href="@{/view/users}" style="text-decoration: none; flex: 1;">
+                        <button type="button" class="btn-cancel">❌ Cancel</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

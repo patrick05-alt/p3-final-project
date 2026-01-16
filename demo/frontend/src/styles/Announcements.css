@@ -1,0 +1,245 @@
+.announcements-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.announcements-header {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.announcements-header h1 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.announcements-header p {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 500;
+}
+
+.error-banner {
+  background: #fef2f2;
+  border: 2px solid #ef4444;
+  color: #991b1b;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.1);
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  gap: 24px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-state p {
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+.empty-state h2 {
+  color: #1f2937;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.empty-state p {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0;
+}
+
+.announcements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 28px;
+}
+
+.announcement-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid #f3f4f6;
+  display: flex;
+  flex-direction: column;
+}
+
+.announcement-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: #e5e7eb;
+}
+
+.announcement-card.expired {
+  opacity: 0.7;
+  background: #f9fafb;
+}
+
+.announcement-header {
+  display: flex;
+  gap: 16px;
+  padding: 24px 24px 16px 24px;
+  border-bottom: 2px solid #f3f4f6;
+  align-items: flex-start;
+}
+
+.priority-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.announcement-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.announcement-meta h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.announcement-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.date {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.announcement-content {
+  padding: 24px;
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.6;
+  flex-grow: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.announcement-footer {
+  padding: 16px 24px;
+  background: #f9fafb;
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
+}
+
+.expiry-date {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.expired-badge {
+  font-size: 12px;
+  color: #dc2626;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+  .announcements-container {
+    padding: 24px 16px;
+  }
+
+  .announcements-header h1 {
+    font-size: 28px;
+  }
+
+  .announcements-header p {
+    font-size: 14px;
+  }
+
+  .announcements-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .announcement-card {
+    border-radius: 10px;
+  }
+
+  .announcement-header {
+    padding: 20px 20px 12px 20px;
+  }
+
+  .announcement-content {
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  .announcement-footer {
+    padding: 12px 16px;
+  }
+}

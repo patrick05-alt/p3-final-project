@@ -1,3 +1,4 @@
+// LAB 12 - REQUIREMENT 5: Database entity - ChecklistItem
 package com.uvt.newcomerassistant.demo;
 
 public class ChecklistItem {

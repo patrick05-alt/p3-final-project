@@ -1,0 +1,351 @@
+.app-shell {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #f9fafb);
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell.dark-mode {
+  background: radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.08), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(37, 99, 235, 0.08), transparent 25%),
+    #0b1220;
+  color: #e5e7eb;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.brand .dot {
+  color: #8b5cf6;
+  font-size: 1.2rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav a.active {
+  background: rgba(139, 92, 246, 0.15);
+  color: #f5f3ff;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+.content {
+  flex: 1;
+  padding: 40px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  color: #1f2937;
+  user-select: none;
+  cursor: default;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #667eea;
+  margin: 0 0 0.2rem 0;
+  font-weight: 700;
+  user-select: none;
+  cursor: default;
+}
+
+.muted {
+  color: #6b7280;
+  font-weight: 500;
+  user-select: none;
+  cursor: default;
+}
+
+.badge,
+.pill {
+  background: #e0e7ff;
+  border: 2px solid #667eea;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  user-select: none;
+  cursor: default;
+}
+
+.badge.success {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.2);
+  color: #bbf7d0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.9rem;
+  padding: 1.2rem;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+.card-accent {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+}
+
+.card-body {
+  position: relative;
+}
+
+.card-title {
+  margin: 0;
+  color: #cbd5e1;
+  user-select: none;
+  cursor: default;
+}
+
+.card-value {
+  margin: 0.2rem 0 0;
+  font-size: 2rem;
+  font-weight: 700;
+  user-select: none;
+  cursor: default;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.9rem;
+  padding: 1rem 1.2rem;
+  backdrop-filter: blur(6px);
+}
+
+.panel h3 {
+  margin-top: 0;
+  user-select: none;
+  cursor: default;
+}
+
+.form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: #cbd5e1;
+  user-select: none;
+  cursor: default;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  color: #e5e7eb;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+button {
+  background: linear-gradient(120deg, #8b5cf6, #6366f1);
+  border: none;
+  border-radius: 0.6rem;
+  color: white;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
+  transform: translateY(-1px);
+}
+
+button.ghost {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.table {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.table-head,
+.table-row {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr 1.6fr 0.6fr;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.table-head {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  color: #a5b4fc;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  user-select: none;
+}
+
+.list-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.list-item input[type="checkbox"] {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.list-item > div {
+  flex: 1;
+  cursor: pointer;
+}
+
+.list-title {
+  font-weight: 600;
+  user-select: none;
+  cursor: default;
+}
+
+.list-sub {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  user-select: none;
+  cursor: default;
+}
+
+.skeleton {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 0.8rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.04));
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.error {
+  color: #fecdd3;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+}
+
+.info {
+  color: #c7d2fe;
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.grid.cards {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}

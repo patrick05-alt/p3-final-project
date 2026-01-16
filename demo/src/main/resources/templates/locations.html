@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations - UVT Newcomer Assistant</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        nav { background: white; padding: 20px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        nav h1 { color: #667eea; margin-bottom: 15px; }
+        nav a { color: #667eea; text-decoration: none; margin-right: 20px; padding: 8px 15px; border-radius: 5px; transition: all 0.3s; }
+        nav a:hover { background: #667eea; color: white; }
+        .card { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #667eea; margin-bottom: 30px; }
+        .locations-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
+        .location-card { background: #f8f9fa; padding: 25px; border-radius: 8px; border-left: 4px solid #28a745; transition: all 0.3s; }
+        .location-card:hover { transform: scale(1.02); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .location-card h3 { color: #333; margin-bottom: 10px; }
+        .category { background: #28a745; color: white; padding: 5px 12px; border-radius: 3px; display: inline-block; margin-bottom: 15px; font-size: 0.85em; }
+        .location-card p { color: #666; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1>🎓 UVT Newcomer Assistant</h1>
+            <a th:href="@{/view/}">Home</a>
+            <a th:href="@{/view/users}">Users</a>
+            <a th:href="@{/view/contacts}">Contacts</a>
+            <a th:href="@{/view/events}">Events</a>
+            <a th:href="@{/view/locations}">Locations</a>
+            <a th:href="@{/view/search}">Search</a>
+        </nav>
+
+        <div class="card">
+            <h2>📍 Campus Locations</h2>
+            <div class="locations-grid" th:if="${not #lists.isEmpty(locations)}">
+                <div th:each="location : ${locations}" class="location-card">
+                    <h3 th:text="${location.name}">Location Name</h3>
+                    <div class="category" th:text="${location.category}">Category</div>
+                    <p th:text="${location.details}">Location details and information</p>
+                </div>
+            </div>
+            <p th:if="${#lists.isEmpty(locations)}" style="text-align: center; color: #666; padding: 40px;">
+                No locations available.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
