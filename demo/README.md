@@ -190,11 +190,6 @@ demo/
 
 ---
 
-## ✅ Lab 12 Status (for reference)
-
-All 13/13 requirements complete. See `LAB12_COMPLETE_GUIDE.md` for the detailed checklist.
-
----
 
 ## 🤝 Contributing & License
 
