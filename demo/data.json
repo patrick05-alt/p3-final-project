@@ -1,0 +1,50 @@
+{
+  "allEvents": [
+    {
+      "name": "Welcome Day",
+      "date": "2025-09-15",
+      "location": "Main Building"
+    },
+    {
+      "name": "Library Tour",
+      "date": "2025-09-16",
+      "location": "Library"
+    }
+  ],
+  "allContacts": {
+    "international-office": {
+      "name": "International Office",
+      "email": "international@uvt.ro",
+      "phone": "123-456-7890"
+    },
+    "it-support": {
+      "name": "IT Support",
+      "email": "it@uvt.ro",
+      "phone": "098-765-4321"
+    }
+  },
+  "allLocations": [
+    {
+      "name": "Main Cafeteria",
+      "category": "Food",
+      "details": "Open 8am - 6pm"
+    },
+    {
+      "name": "Student Info Center",
+      "category": "Office",
+      "details": "Building A, Room 101"
+    }
+  ],
+  "checklistItems": [
+    {
+      "id": "1",
+      "task": "Register for classes",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "task": "Get student ID card",
+      "completed": false
+    }
+  ]
+}
