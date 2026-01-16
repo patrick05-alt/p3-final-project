@@ -6,9 +6,6 @@ A full-stack application for helping UVT newcomers with onboarding tasks, contac
 
 ---
 
-## ✅ **Lab 12 Requirements - ALL COMPLETED (13/13 points)**
-
-| Requirement | Points | Status |
 ## 🔑 Project at a Glance
 
 - **Backend:** Java 21, Spring Boot REST API, Thymeleaf views, JPA/Hibernate, JWT security, async thread pool.
@@ -187,12 +184,6 @@ demo/
 - **Frontend CORS errors:** ensure `CorsConfig` allows `http://localhost:5173`.
 - **npm install blocked on Windows:** `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`.
 - **Port 8080 busy:** `./mvnw spring-boot:run -Dserver.port=8081` and update `VITE_API_BASE_URL` accordingly.
-
----
-
-## ✅ Lab 12 Status (for reference)
-
-All 13/13 requirements complete. See `LAB12_COMPLETE_GUIDE.md` for the detailed checklist.
 
 ---
 
