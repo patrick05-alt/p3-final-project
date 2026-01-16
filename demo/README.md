@@ -6,9 +6,6 @@ A full-stack application for helping UVT newcomers with onboarding tasks, contac
 
 ---
 
-## ✅ **Lab 12 Requirements - ALL COMPLETED (13/13 points)**
-
-| Requirement | Points | Status |
 ## 🔑 Project at a Glance
 
 - **Backend:** Java 21, Spring Boot REST API, Thymeleaf views, JPA/Hibernate, JWT security, async thread pool.
